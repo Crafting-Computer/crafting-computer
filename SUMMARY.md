@@ -1,4 +1,20 @@
 # Table of contents
 
-* [Create a Computer from Scratch Using Sim](README.md)
+* [Introduction](README.md)
+
+## Logic Circuits
+
+* [Not Gate](logic-circuits/not-gate.md)
+* [And Gate](logic-circuits/and-gate.md)
+* [Or Gate](logic-circuits/or-gate.md)
+* [Xor Gate](logic-circuits/xor-gate.md)
+* [Multiplexer](logic-circuits/multiplexer.md)
+* [Demultiplexer](logic-circuits/demultiplexer.md)
+
+## Arithmetic Circuits
+
+* [Addition](arithmetic-circuits/addition.md)
+* [Subtraction](arithmetic-circuits/subtraction.md)
+* [Multiplication](arithmetic-circuits/multiplication.md)
+* [Arithmetic Logic Unit](arithmetic-logic-unit-1.md)
 
