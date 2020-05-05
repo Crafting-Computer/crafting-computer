@@ -307,7 +307,7 @@ not a[1] -> [1] =
     nand a a
 ```
 
-![not\_gate\_delays](.gitbook/assets/not_gate_delays.png)
+![not\_gate\_delays](/media/not_gate_delays.png)
 
 Notice that any electric signal passes through `1` nand gate before reaching the output light bulb. This implies `1` gate delay.
 
@@ -318,7 +318,7 @@ and a[1] b[1] -> [1] =
     not (nand a b)
 ```
 
-![and\_gate\_delays](.gitbook/assets/and_gate_delays.png)
+![and\_gate\_delays](/media/and_gate_delays.png)
 
 Notice that any electric signal passes through `2` nand gates before reaching the output light bulb. This implies `2` gate delays.
 
@@ -329,7 +329,7 @@ or a[1] b[1] -> [1] =
     nand (not a) (not b)
 ```
 
-![or\_gate\_delays](.gitbook/assets/or_gate_delays.png)
+![or\_gate\_delays](/media/or_gate_delays.png)
 
 Notice that any electric signal passes through `2` nand gates before reaching the output light bulb. This implies `2` gate delays.
 
@@ -344,7 +344,7 @@ xor a[1] b[1] -> [1] =
     or first second
 ```
 
-![xor\_gate\_delays](.gitbook/assets/xor_gate_delays.png)
+![xor\_gate\_delays](/media/xor_gate_delays.png)
 
 Notice that any electric signal passes through
 
@@ -366,7 +366,7 @@ xor a[1] b[1] -> [1] =
     nand first second
 ```
 
-![xor\_optimized\_gate\_delays](.gitbook/assets/xor_optimized_gate_delays.png)
+![xor\_optimized\_gate\_delays](/media/xor_optimized_gate_delays.png)
 
 Notice that any electric signal passes through `3` nand gates before reaching the output light bulb. This implies `3` gate delays. Compared to our original implementation, the optimized version saves us `2` gate delays!
 
@@ -378,7 +378,7 @@ Sometimes, we need to `or` more than two numbers together. One use case we will 
 
 Because the truth table is rather big, we will show the gate diagram instead:
 
-![or\_4\_way horizontal](.gitbook/assets/or_4_way_horizontal.png)
+![or\_4\_way horizontal](/media/or_4_way_horizontal.png)
 
 So far, we have seen most logic gates laid out horizontally like the above: inputs on the left and outputs on the right. This layout also suggests that we have four inputs and one output like so:
 
@@ -430,11 +430,11 @@ input[3]
 
 Here's how a 4-bit number `0101` or `6` in decimals will be laid out:
 
-![bus indices demo](.gitbook/assets/bus_indices.png)
+![bus indices demo](/media/bus_indices.png)
 
 Notice that **the first or the 0th index starts from the right and grow to the left**. In Mathematics, we call the 0th digit the least significant bit and the 3rd digit the most significant bit of a 4-bit binary number. The reason why we start the indices at zero is because:
 
-![bus indices as exponents](.gitbook/assets/bus_indices_as_exponents.png)
+![bus indices as exponents](/media/bus_indices_as_exponents.png)
 
 The binary number `0101` has a decimal value of:
 
@@ -446,7 +446,7 @@ The binary number `0101` has a decimal value of:
 
 Now that we understand what a bus is, we will show a 4-way or gate in bus layout:
 
-![or\_r\_way bus layout](.gitbook/assets/or_4_way_vertical.png)
+![or\_r\_way bus layout](/media/or_4_way_vertical.png)
 
 We can implement `or_4_way` in Sim like so:
 
@@ -1484,11 +1484,11 @@ Binary multiplication works the same way as decimal multiplication. If one of th
 
 Let's first look at a sample 2-bit multiplication with `10 x 11`:
 
-![sample 2-bit multiplication with numbers](.gitbook/assets/2_bit_multiplication_number_demo.png)
+![sample 2-bit multiplication with numbers](/media/2_bit_multiplication_number_demo.png)
 
 This works exactly the same as decimal multiplication. Now, instead of using concrete numbers, let's generalize this process using variable for each digit. So we will be multiplying two 2-bit numbers `a` and `b`. Since they are both 2 bits, we can express the digits of `a` as `a1 a0` and the digits of `b` as `b1 b0`. The process is exactly the same as the previous number example:
 
-![sample 2-bit multiplication with variables](.gitbook/assets/2_bit_multiplication_variable_demo.png)
+![sample 2-bit multiplication with variables](/media/2_bit_multiplication_variable_demo.png)
 
 Now it's your turn to implement the 2-bit multiplier in Sim.
 
