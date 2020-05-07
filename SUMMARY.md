@@ -18,3 +18,8 @@
 * [Multiplication](arithmetic-circuits/multiplication.md)
 * [Arithmetic Logic Unit](arithmetic-logic-unit-1.md)
 
+## Memory
+
+* [Cascading Not Gates](memory/cascading-not-gates.md)
+* [S R Latch](memory/s-r-latch.md)
+
