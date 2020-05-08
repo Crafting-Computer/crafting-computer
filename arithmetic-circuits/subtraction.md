@@ -224,3 +224,11 @@ Does flipping bits sound similar to a logic gate we created before? Which circui
 {% endtab %}
 {% endtabs %}
 
+## Additional Resource
+
+Check out Computerphile's awesome explaination of how signed binary works:
+
+{% embed url="https://www.youtube.com/watch?v=lKTsv6iVxV4" caption="Computerphile Signed Binary Video" %}
+
+
+
