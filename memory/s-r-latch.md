@@ -2,7 +2,7 @@
 
 Last time, we were able to set `1` to be the stored value of our cascading not gates but can't reset it back to `0`. To be able to reset, we can use a new circuit called a Set Reset Latch or S R Latch for short:
 
-![S R Latch \(Initial State\)](../.gitbook/assets/image%20%2838%29.png)
+![S R Latch \(Initial State\)](../.gitbook/assets/image%20%2839%29.png)
 
 Notice that we used two same gates ans weaved the outputs and inputs together into a loop that looks like the number `8`. The gates we used are called `nor` gates which is short for `not or`. It's basically the output of `or` gate inverted.
 
@@ -54,7 +54,7 @@ The output `0` of the bottom `nor` gate goes to the input of the top `nor` gate.
 
 ### Step 3
 
-![Set State Step 3](../.gitbook/assets/image%20%2835%29.png)
+![Set State Step 3](../.gitbook/assets/image%20%2836%29.png)
 
 Since the top switch is off and the output of the bottom `nor` gate is `0`, the output of the top `nor` gate has to be `1` because of our truth table:
 
@@ -90,7 +90,7 @@ Now if we instead turn on the top switch, we will get:
 
 The top light bulb is off while the bottom light bulb is on. The steps are the same as above so we will let you trace through them yourself to get the feel. By now, you may notice that the top and bottom light bulb is always the complement of each other. When one is on, the other must be off. This why we call the top light bulb `q` and the bottom light bulb `q complement`. You should also get that the bottom switch sets `q` to `1` while the top switch resets `q` to `0`. That's why they are called `s` for set and `r` for reset respectively.
 
-![Input and Output Names](../.gitbook/assets/image%20%2831%29.png)
+![Input and Output Names](../.gitbook/assets/image%20%2832%29.png)
 
 ## Read State
 
@@ -104,7 +104,7 @@ Again, we will break the analysis down into 4 steps. You should be familiar with
 
 `0 nor 1` is `0`.
 
-![Read after Reset State \(Step 1\)](../.gitbook/assets/image%20%2832%29.png)
+![Read after Reset State \(Step 1\)](../.gitbook/assets/image%20%2833%29.png)
 
 ### Step 2
 
@@ -116,13 +116,13 @@ Pass down `0` to bottom `nor` gate.
 
 `0 nor 0` is `1`.
 
-![Read after Reset State \(Step 3\)](../.gitbook/assets/image%20%2833%29.png)
+![Read after Reset State \(Step 3\)](../.gitbook/assets/image%20%2834%29.png)
 
 ### Step 4
 
 Pass `1` up to the top `nor` gate and return back to step 1. You can also start the analysis from the bottom `nor` gate and the result will be the same.
 
-![Read after Reset State \(Step 4\)](../.gitbook/assets/image%20%2837%29.png)
+![Read after Reset State \(Step 4\)](../.gitbook/assets/image%20%2838%29.png)
 
 After going through the 4 steps, we see that the output remains the same. Now it's your turn to analys the case when the state is at set state. You should discover that the output also remains the same. This is why we call this state the read state. We simply read what's stored in our latch.
 
@@ -144,7 +144,7 @@ What about when both inputs are `1`?
 
 We will learn why this mysterious state is called Not Used State a bit later. Meanwhile, let's first look at the outputs:
 
-![Not Used State](../.gitbook/assets/image%20%2830%29.png)
+![Not Used State](../.gitbook/assets/image%20%2831%29.png)
 
 Quite surprisingly, both outputs are `0`. Remember previously we discovered that the two outputs are always complement of each other? This seems to be a violation of our rule! Before we talk more about this state, let's figure out how the outputs are calculated.
 
@@ -158,7 +158,7 @@ Quite surprisingly, both outputs are `0`. Remember previously we discovered that
 
 Pass `0` down to the bottom `nor` gate.
 
-![Not Used State \(Step 2\)](../.gitbook/assets/image%20%2829%29.png)
+![Not Used State \(Step 2\)](../.gitbook/assets/image%20%2830%29.png)
 
 ### Step 3
 
@@ -170,7 +170,7 @@ Pass `0` down to the bottom `nor` gate.
 
 Pass `0` up to the top `nor` gate and return back to step 1. You can start the analysis from the bottom `nor` gate and the result will be the same.
 
-![Not Used State \(Step 4\)](../.gitbook/assets/image%20%2839%29.png)
+![Not Used State \(Step 4\)](../.gitbook/assets/image%20%2840%29.png)
 
 ## Reading Not Used State
 
@@ -200,11 +200,11 @@ So the outputs tell us that this state behaves the same as the Set State. Well n
 
 At the start, both inputs are `0` and both outputs from the previous Not Used State are also `0`.
 
-![Reading Not Used State \(Step 1\)](../.gitbook/assets/image%20%2827%29.png)
+![Reading Not Used State \(Step 1\)](../.gitbook/assets/image%20%2828%29.png)
 
 ### Step 2 \(Starting from Bottom\)
 
-![Reading Not Used State \(Step 2\)](../.gitbook/assets/image%20%2826%29.png)
+![Reading Not Used State \(Step 2\)](../.gitbook/assets/image%20%2827%29.png)
 
 ### Step 3 \(Starting from Bottom\)
 
@@ -220,12 +220,18 @@ Wat? We are confused. If we start the analysis from the bottom `nor` gate instea
 
 ## Implementation
 
-It's your time to construct the S R Latch in Sim. Note that even though we have two outputs `q` and `q complement`, we will only need `q` in practise. So just return the value of `q` at the end of the function.
+It's your time to construct the S R Latch in Sim. Note that even though we have two outputs `q` and `q complement`, we will only need `q` in practise. So just return the value of `q` at the end of the function. Another thing to note is that we make `s` and `r` both of size `n` instead of size `1`. This doesn't influence the architecture of our circuit but add in the flexibility to store `n` bits instead of just `1`.
 
 Here's the header:
 
 ```text
 s_r_latch s[n] r[n] -> [n]
+```
+
+You need to construct the `nor` gate before making the latch. Here's the header for `nor`:
+
+```text
+nor a[n] b[n] -> [n]
 ```
 
 {% tabs %}

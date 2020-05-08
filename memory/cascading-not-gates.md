@@ -6,7 +6,7 @@ Memory enables humans like us to learn new knowledge and development relationshi
 
 The simplest way to store 1 bit is a loop containing two cascading not gates:
 
-![Cascading Not Gates \(Initial State\)](../.gitbook/assets/image%20%2828%29.png)
+![Cascading Not Gates \(Initial State\)](../.gitbook/assets/image%20%2829%29.png)
 
 The `or` gate is just used to combine the inputs from the switch and the second `not` gate. It does serves no other function in the circuit. The above is the initial state when you finished connecting the circuit but haven't turned on the switch. Notice the red wires which mean undetermined state. These wires are undetermined because the switch outputs a `0` but we don't know what the second `not`gate outputs. So the output of the `or` gate and all the wires connected to its output are undertermined. However, once we turn on the switch:
 

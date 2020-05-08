@@ -23,4 +23,5 @@
 * [Cascading Not Gates](memory/cascading-not-gates.md)
 * [S R Latch](memory/s-r-latch.md)
 * [S R Flip Flop](memory/untitled.md)
+* [D Flip Flop](memory/d-flip-flop.md)
 
