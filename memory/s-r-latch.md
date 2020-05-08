@@ -2,7 +2,7 @@
 
 Last time, we were able to set `1` to be the stored value of our cascading not gates but can't reset it back to `0`. To be able to reset, we can use a new circuit called a Set Reset Latch or S R Latch for short:
 
-![S R Latch \(Initial State\)](../.gitbook/assets/image%20%2837%29.png)
+![S R Latch \(Initial State\)](../.gitbook/assets/image%20%2838%29.png)
 
 Notice that we used two same gates ans weaved the outputs and inputs together into a loop that looks like the number `8`. The gates we used are called `nor` gates which is short for `not or`. It's basically the output of `or` gate inverted.
 
@@ -122,7 +122,7 @@ Pass down `0` to bottom `nor` gate.
 
 Pass `1` up to the top `nor` gate and return back to step 1. You can also start the analysis from the bottom `nor` gate and the result will be the same.
 
-![Read after Reset State \(Step 4\)](../.gitbook/assets/image%20%2836%29.png)
+![Read after Reset State \(Step 4\)](../.gitbook/assets/image%20%2837%29.png)
 
 After going through the 4 steps, we see that the output remains the same. Now it's your turn to analys the case when the state is at set state. You should discover that the output also remains the same. This is why we call this state the read state. We simply read what's stored in our latch.
 
@@ -170,7 +170,7 @@ Pass `0` down to the bottom `nor` gate.
 
 Pass `0` up to the top `nor` gate and return back to step 1. You can start the analysis from the bottom `nor` gate and the result will be the same.
 
-![Not Used State \(Step 4\)](../.gitbook/assets/image%20%2838%29.png)
+![Not Used State \(Step 4\)](../.gitbook/assets/image%20%2839%29.png)
 
 ## Reading Not Used State
 
@@ -217,6 +217,37 @@ At the start, both inputs are `0` and both outputs from the previous Not Used St
 Wat? We are confused. If we start the analysis from the bottom `nor` gate instead of the top, we get the same behavior as the Reset State instead of the Set State! So in this case, we say this circuit is in an undertermined state. Since we can already set, reset, and read using the previous three cases, we are good to discard this case and just tell everyone not to use it. That's why it's called the Not Used State.
 
 🎉 You made it! After this long journey, you become an expert in the S R Latch which is the cornerstone of digital storage!
+
+## Implementation
+
+It's your time to construct the S R Latch in Sim. Note that even though we have two outputs `q` and `q complement`, we will only need `q` in practise. So just return the value of `q` at the end of the function.
+
+Here's the header:
+
+```text
+s_r_latch s[n] r[n] -> [n]
+```
+
+{% tabs %}
+{% tab title="Hints" %}
+If you get stuck, click on "See Hints".
+{% endtab %}
+
+{% tab title="See Hints" %}
+Fill in the blanks below:
+
+```text
+s_r_latch s[n] r[n] -> [n] =
+    let
+        q =
+            ___________________
+        not_q =
+            ___________________
+    in
+    q
+```
+{% endtab %}
+{% endtabs %}
 
 ## Additional Resource
 
