@@ -24,4 +24,5 @@
 * [S R Latch](memory/s-r-latch.md)
 * [S R Flip Flop](memory/untitled.md)
 * [D Flip Flop](memory/d-flip-flop.md)
+* [Random Access Memory](memory/random-access-memory.md)
 

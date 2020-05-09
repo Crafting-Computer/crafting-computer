@@ -20,7 +20,7 @@ If we can condense `s` and `r` into one input called `d` \(stands for data\), we
 
 Let's take a look at how the new D Flip Flop is constructed:
 
-![D Flip Flop](../.gitbook/assets/image%20%2826%29.png)
+![D Flip Flop](../.gitbook/assets/image%20%2827%29.png)
 
 Notice that we just pass `d` directly to `s` and invert `d` and pass it to `r`.
 

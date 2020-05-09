@@ -6,15 +6,15 @@ Memory enables humans like us to learn new knowledge and development relationshi
 
 The simplest way to store 1 bit is a loop containing two cascading not gates:
 
-![Cascading Not Gates \(Initial State\)](../.gitbook/assets/image%20%2829%29.png)
+![Cascading Not Gates \(Initial State\)](../.gitbook/assets/image%20%2830%29.png)
 
 The `or` gate is just used to combine the inputs from the switch and the second `not` gate. It does serves no other function in the circuit. The above is the initial state when you finished connecting the circuit but haven't turned on the switch. Notice the red wires which mean undetermined state. These wires are undetermined because the switch outputs a `0` but we don't know what the second `not`gate outputs. So the output of the `or` gate and all the wires connected to its output are undertermined. However, once we turn on the switch:
 
-![Cascading Not Gates \(On State\)](../.gitbook/assets/image%20%2815%29.png)
+![Cascading Not Gates \(On State\)](../.gitbook/assets/image%20%2816%29.png)
 
 The or gate is no longer confused because one of its input is `1` so the output has to be `1`. The `1` outputed by the `or` gate is negated once by the first `not` gate to become `0` but is negated again by the second `not` gate to return back to `1`. Now if we turn off the switch:
 
-![Cascading Not Gates \(Off State\)](../.gitbook/assets/image%20%285%29.png)
+![Cascading Not Gates \(Off State\)](../.gitbook/assets/image%20%286%29.png)
 
 Quite unexpected right? The light bulb remains on because one of the inputs of the `or` gate is `1` so whether the switch is on or off doesn't matter. This behavior is both good and bad. The good part is we successfully created our first memory using digital circuits! We are able to remember the on state forever. The bad part is once we store the value, we can never change it. It's like you can only deposit money into a bank account once and it's immediately frozen forever so you can't deposite more or retrieve your money back. This really sucks because the whole point of having a memory is to be able to be able to add new stuff to it or update the stuff it contains. To create a more useful memory, we will need to create a latch. Before we move on, you can actually implement this in Sim:
 

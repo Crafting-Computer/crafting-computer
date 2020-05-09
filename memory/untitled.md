@@ -2,7 +2,7 @@
 
 Our S R Latch works brilliantly in storing and retrieving 1 bit of data. However, for a memory unit to be useful in a CPU, we need to be able to control the time to store or retrieve data. Currently, the inputs to the S R Latch always have values so we have to be in one of Set, Reset, Read, or Not Used State. Wouldn't it be great if we can add an Idle State so no matter what are the inputs `s` and `r` we are guaranteed to not modify the data? We can do it by adding a clock signal \(abbreviated as `clk`\)
 
-![S R Flip Flop with Q Complement](../.gitbook/assets/image%20%2837%29.png)
+![S R Flip Flop with Q Complement](../.gitbook/assets/image%20%2838%29.png)
 
 What the `clk` does is simple:
 
